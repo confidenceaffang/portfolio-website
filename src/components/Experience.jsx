@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 
 const experiences = [
     {
-      year: "2023 - Present",
+      year: "August 2023 - May 2024",
       role: "Full Stack Development",
       company: "CodePath",
       description: [
@@ -11,8 +11,31 @@ const experiences = [
         "Built real-world projects from scratch, focusing on practical coding skills and collaboration in team environments.",
         "Developed a professional portfolio showcasing full stack applications."
       ],
-      technologies: ["Javascript", "React.js","Nex.js", "Sanity" ]
+      technologies: ["Javascript", "React.js","Node.js", "SQL","HTML", "CSS" ]
     },
+    {
+      year : "August 2024 - Present",
+      role : "Computer Science Tutor",
+      company : "Wayne State College",
+      description : [
+        "Tutored 25 Wayne State students in Python and Swift as part of offering a course at the Math & Science Center.",
+        "Guided students in understanding complex programming and electronic principles.",
+        "Enabled the successful completion of advanced projects, through a collaborative and dynamic learning environment."
+      ], 
+      technologies : ["Python", "Swift"]
+    },
+    {
+      year : "September 2024 - Present",
+      role : "Intro to Software Engineering",
+      company: "App Academy",
+      description:  [
+        "Gained foundational knowledge in software development, including programming principles, algorithms, and object-oriented design.",
+        "Developed hands-on experience in coding, debugging, and version control using tools like Git and platforms such as GitHub.",
+        "Collaborated on team projects, applying Agile methodologies to develop software solutions and improve workflow efficiency."
+      ],
+      technologies: ["Javascript", "React.js","Node.js", "SQL","HTML", "CSS","Git", "GitHub"]
+    }
+
   ];
   
   const Experience = () => {
