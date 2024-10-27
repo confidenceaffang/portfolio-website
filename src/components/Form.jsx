@@ -18,42 +18,42 @@ const Form = () => {
             
             <form ref={form} onSubmit={sendEmail}>
 
-                <div className="flex flex-col my-5">
+                <div className="flex flex-col my-5 lg:justify-center">
                     <label className="text-xl py-2" htmlFor="name">Name</label>
                     <input
                         id="name"
                         name ='name'
                         type="text"
-                        className="border border-neutral-900 p-2 rounded-md text-black"
+                        className="border border-neutral-900 p-2 rounded-md text-black lg:w-3/4"
                         placeholder="Enter your name"
                     />
                 </div>
 
-                <div className="flex flex-col my-5">
+                <div className="flex flex-col my-5 lg:justify-center">
                     <label className="text-xl py-2" htmlFor="email">Email</label>
                     <input
                         id="email"
                         type="email"
                         name='email'
-                        className="border border-neutral-900 p-2 rounded-md text-black"
+                        className="border border-neutral-900 p-2 rounded-md text-black lg:w-3/4"
                         placeholder="Enter your email"
                     />
                 </div>
 
             
-                <div className="flex flex-col my-5">
+                <div className="flex flex-col my-5 lg:justify-center">
                     <label className="text-xl py-2" htmlFor="message">Message</label>
                     <textarea
                         id="message"
                         name='message'
-                        className="border border-neutral-900 p-2 rounded-md text-black"
+                        className="border border-neutral-900 p-2 rounded-md text-black lg:w-3/4"
                         rows="4"
                         placeholder="Write your message here"
                     />
                 </div>
 
 
-                <div className="text-center mt-10">
+                <div className="text-center mt-10" >
                     <button className="bg-neutral-900 text-white px-4 py-2 rounded-md">
                         Send
                     </button>
