@@ -25,7 +25,7 @@ const Contact = () =>{
             className="my-4"> 
                 (319) 409 - 0805
             </motion.p>
-            <a href="H" className="border-b">
+            <a href="mailto:confidenceaffang@gmail.com" className="border-b">
                 confidenceaffang@gmail.com
             </a>
         </div>

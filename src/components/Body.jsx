@@ -27,7 +27,7 @@ const Body = () => {
               variants={container(0.5)}
               initial="hidden"
               animate="visible"
-              className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl tracking-tight text-transprent"
+              className="bg-gradient-to-r from-purple-300 to-purple-500 bg-clip-text text-4xl tracking-tight text-cyan"
             >
               Full Stack Developer
             </motion.span>
@@ -38,7 +38,7 @@ const Body = () => {
               className="my-3 max-w-xl py-6 font-light tracking-tighter"
             >
               I am a passionate full stack developer with a knack for crafting
-              robust and scalable web applications. With few years of hands-on
+              robust and scalable web applications. With 5 years of hands-on
               experience, I have honed my skills in front-end technologies like
               React and Next.js, as well as back-end technologies like Node.js,
               MySQL, PostgreSQL, and MongoDB. My goal is to leverage my
