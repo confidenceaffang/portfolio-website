@@ -1,6 +1,8 @@
 import project1 from "../assets/projects/project-1.png";
 import chatbot from "../assets/projects/chatbot.png";
 import webscraper from "../assets/projects/webscraper.png";
+import bank from "../assets/projects/bank.png";
+import faceid from "../assets/projects/faceid.jpg";
 import { motion } from "framer-motion";
 
 const projects = [
@@ -31,6 +33,25 @@ const projects = [
       "Demonstrated proficiency in web scraping, data analysis, and file handling."
     ],
     technologies: ["Python"]
+  },
+  {
+    title: "Banking App",
+    image: bank,
+    description: [
+      "Engineered a full-featured banking platform using TypeScript, React, and Next.js, implementing secure user authentication, real-time transaction processing, and responsive design to ensure seamless cross-device functionality.",
+"Spearheaded the development of 17 custom React components and 3 API integrations, while ensuring WCAG 2.1 AA accessibility compliance, improving the banking experience for users with disabilities."
+    ],
+    technologies: ["TypeScript", "HTML", "CSS", "JavaScript", "React", "Next.js", "Shadcn"]
+  },
+  {
+    title: "Face Identification",
+    image: faceid,
+    description: [
+      "Engineered a face identification system using the Viola-Jones algorithm, achieving 70% accuracy in facial recognition and securely storing over 200 facial embeddings in a PostgreSQL database on Aiven.",
+      "Developed a user-friendly interface for the face recognition system, integrating real-time camera feed processing and achieving a response time of under 10 seconds for facial matching queries."
+
+       ],
+    technologies: ["Python", "PostgreSQL", "Aiven"]
   }
 ];
 

@@ -7,9 +7,9 @@ const experiences = [
       role: "Full Stack Development",
       company: "CodePath",
       description: [
-        "Gained hands-on experience in front-end and back-end development using technologies like HTML, CSS, JavaScript, React, Node.js, and SQL.",
-        "Built real-world projects from scratch, focusing on practical coding skills and collaboration in team environments.",
-        "Developed a professional portfolio showcasing full stack applications."
+        "Gained hands-on experience in front-end and back-end development using technologies like HTML, CSS, JavaScript, React, Node.js, and SQL.\n",
+        "Built real-world projects from scratch, focusing on practical coding skills and collaboration in team environments.\n",
+        "Developed a professional portfolio showcasing full stack applications.\n"
       ],
       technologies: ["Javascript", "React.js","Node.js", "SQL","HTML", "CSS" ]
     },
@@ -18,9 +18,9 @@ const experiences = [
       role : "Computer Science Tutor",
       company : "Wayne State College",
       description : [
-        "Tutored 25 Wayne State students in Python and Swift as part of offering a course at the Math & Science Center.",
-        "Guided students in understanding complex programming and electronic principles.",
-        "Enabled the successful completion of advanced projects, through a collaborative and dynamic learning environment."
+        "Tutored 25 Wayne State students in Python and Swift as part of offering a course at the Math & Science Center.\n",
+        "Guided students in understanding complex programming and electronic principles.\n",
+        "Enabled the successful completion of advanced projects, through a collaborative and dynamic learning environment.\n"
       ], 
       technologies : ["Python", "Swift"]
     },
@@ -29,12 +29,25 @@ const experiences = [
       role : "Intro to Software Engineering",
       company: "App Academy",
       description:  [
-        "Gained foundational knowledge in software development, including programming principles, algorithms, and object-oriented design.",
-        "Developed hands-on experience in coding, debugging, and version control using tools like Git and platforms such as GitHub.",
-        "Collaborated on team projects, applying Agile methodologies to develop software solutions and improve workflow efficiency."
+        "Gained foundational knowledge in software development, including programming principles, algorithms, and object-oriented design.\n",
+        "Developed hands-on experience in coding, debugging, and version control using tools like Git and platforms such as GitHub.\n",
+        "Collaborated on team projects, applying Agile methodologies to develop software solutions and improve workflow efficiency.\n"
       ],
       technologies: ["Javascript", "React.js","Node.js", "SQL","HTML", "CSS","Git", "GitHub"]
+    },
+    {
+      year : "September 2024 - Present",
+      role : "Website Team",
+      company: "Association of Computing Machinery",
+      description:  [
+        "Redesigned ACM club's website, implementing contact and feedback forms and social media integration features and improving accessibility to WCAG 2.1 AA standards, resulting in a 40% increase in user engagement and 25% growth in club membership.\n",
+        "Developed and integrated accessibility enhancements and interactive features, including a real-time event calendar and member forum, while optimizing site performance to reduce load time by 60%, resulting in a 45% increase in user engagement with club activities.\n",
+        "Contributed to regular updates and maintenance, applying front-end and back-end skills to keep the website current and reflective of ongoing club initiatives and events.\n"
+
+      ],
+      technologies: ["Javascript", "Svelte","Node.js","HTML", "CSS","Git", "GitHub"]
     }
+
 
   ];
   
