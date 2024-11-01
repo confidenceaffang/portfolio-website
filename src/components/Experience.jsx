@@ -3,20 +3,20 @@ import {motion} from "framer-motion";
 
 const experiences = [
     {
-      year: "August 2023 - May 2024",
-      role: "Full Stack Development",
-      company: "CodePath",
+      year: "December 2023 - May 2024",
+      role: "Software Engineer Intern",
+      company: " Ckodon Fooundation",
       description: [
-        "Gained hands-on experience in front-end and back-end development using technologies like HTML, CSS, JavaScript, React, Node.js, and SQL.\n",
-        "Built real-world projects from scratch, focusing on practical coding skills and collaboration in team environments.\n",
-        "Developed a professional portfolio showcasing full stack applications.\n"
+        "Created an engaging Wellness feature for fitness, meditation, and shared music, leveraging a web interface and Slack/Teams integrations using TypeScript, React, Remix, Node.js, Tailwind CSS, and Prisma ORM.\n",
+        "Collaborated in a team of 7 to build 2 full-stack applications from scratch, including an e-commerce platform, strengthening coding skills and version control proficiency in Git."
+        
       ],
       technologies: ["Javascript", "React.js","Node.js", "SQL","HTML", "CSS" ]
     },
     {
       year : "August 2024 - Present",
       role : "Computer Science Tutor",
-      company : "Wayne State College",
+      company : " Wayne State College",
       description : [
         "Tutored 25 Wayne State students in Python and Swift as part of offering a course at the Math & Science Center.\n",
         "Guided students in understanding complex programming and electronic principles.\n",
@@ -26,19 +26,19 @@ const experiences = [
     },
     {
       year : "September 2024 - Present",
-      role : "Intro to Software Engineering",
-      company: "App Academy",
+      role : "Full Stack Developer",
+      company: " Olives Technologies",
       description:  [
-        "Gained foundational knowledge in software development, including programming principles, algorithms, and object-oriented design.\n",
-        "Developed hands-on experience in coding, debugging, and version control using tools like Git and platforms such as GitHub.\n",
-        "Collaborated on team projects, applying Agile methodologies to develop software solutions and improve workflow efficiency.\n"
+        "Designed and implemented React-based digital intake forms, optimizing client onboarding and facilitating successful matches between 30+ patients and culturally-appropriate BIPOC therapists.\n", 
+        "Implemented Firebase for robust client-side authentication, enhancing data security and reducing unauthorized access attempts by 70%.\n",
+        "Developed and implemented a patient prioritization algorithm utilizing hard and soft criteria, resulting in a 60% reduction in practitioner appointment review time."
       ],
       technologies: ["Javascript", "React.js","Node.js", "SQL","HTML", "CSS","Git", "GitHub"]
     },
     {
       year : "September 2024 - Present",
       role : "Website Team",
-      company: "Association of Computing Machinery",
+      company: " Association of Computing Machinery",
       description:  [
         "Redesigned ACM club's website, implementing contact and feedback forms and social media integration features and improving accessibility to WCAG 2.1 AA standards, resulting in a 40% increase in user engagement and 25% growth in club membership.\n",
         "Developed and integrated accessibility enhancements and interactive features, including a real-time event calendar and member forum, while optimizing site performance to reduce load time by 60%, resulting in a 45% increase in user engagement with club activities.\n",
