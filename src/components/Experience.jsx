@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 
 const experiences = [
     {
-      year: "December 2023 - May 2024",
+      year: "December 2023 - March 2024",
       role: "Software Engineer Intern",
       company: " Ckodon Fooundation",
       description: [
@@ -25,7 +25,7 @@ const experiences = [
       technologies : ["Python", "Swift"]
     },
     {
-      year : "September 2024 - Present",
+      year : "May 2024 - August 2024",
       role : "Full Stack Developer",
       company: " Olives Technologies",
       description:  [
