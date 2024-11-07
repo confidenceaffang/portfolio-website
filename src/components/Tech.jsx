@@ -3,6 +3,9 @@ import { RiReactjsLine} from "react-icons/ri";
 import { TbBrandNextjs } from "react-icons/tb";
 import {DiNodejs, DiPostgresql} from "react-icons/di";
 import {motion} from "framer-motion";
+import { DiMongodb, DiDjango } from "react-icons/di";
+import { LinearGradient } from "react-text-gradients";
+
 
 const iconvar = (duration) =>({
     initial : { y:-10 },
@@ -73,6 +76,22 @@ const Tech =() => {
             animate = "animate"
             className="rounded-2xl border-4 border-neutral-800 p-4"> 
                 <DiPostgresql  className="text-7xl text-sky-700"/>
+           </motion.div>
+           <motion.div 
+           variants = {iconvar(5)}
+           initial = "initial"
+           animate = "animate"
+           className="rounded-2xl border-4 border-neutral-800 p-4">
+            <DiMongodb  className="text-7xl text-green-700"/>
+           </motion.div>
+           <motion.div 
+           variants= {iconvar(9)}
+           animate= 'animate'
+           initial = 'initial'
+           className="rounded-2xl border-4 border-neutral-800, p-4">
+            <LinearGradient gradient={["to right", ' #FFC300,#0000FF']}>
+            <DiDjango className="text-7xl text-yellow-600"/>
+            </LinearGradient>
            </motion.div>
            </motion.div>
         </div>

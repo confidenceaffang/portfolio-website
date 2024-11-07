@@ -5,10 +5,12 @@ import bank from "../assets/projects/bank.png";
 import faceid from "../assets/projects/faceid.jpg";
 import { motion } from "framer-motion";
 
+
 const projects = [
   {
     title: "Weather App",
     image: project1,
+  
     description: [
       "Built a personalized weather app integrating Open Weather API and ChatGPT API that provides accurate clothing recommendations for different weather conditions.",
       "Implemented a Celsius/Fahrenheit toggle feature and successfully deployed on GitHub Pages."
