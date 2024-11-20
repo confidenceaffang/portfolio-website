@@ -7,6 +7,7 @@ import { DiMongodb, DiDjango } from "react-icons/di";
 import { LinearGradient } from "react-text-gradients";
 
 
+
 const iconvar = (duration) =>({
     initial : { y:-10 },
     animate : {y: [10, -10],
