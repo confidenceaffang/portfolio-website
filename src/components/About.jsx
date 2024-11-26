@@ -31,17 +31,16 @@ const About = () => {
               transition={{ duration: 0.5 }}
               className="my-2 max-w-xl py-6"
             >
-              I am a dedicated and versatile full stack developer with a passion
-              for creating efficient and user-friendly web applications. With few
-              years of experience, I have worked with a variety of
-              technologies, including React, Next.js, Node.js, MySQL,
-              PostgreSQL, and MongoDB. My journey in web development began with
-              a deep curiosity for how things work, and it has evolved into a
-              career where I continuously strive to learn and adapt to new
-              challenges. I thrive in collaborative environments and enjoy
-              solving complex problems to deliver high-quality solutions.
-              Outside of coding, I enjoy staying active, exploring new
-              technologies, and contributing to open-source projects.
+              My academic journey in computer science has been complemented by
+              valuable hands-on experience during an internship, where I applied
+              my learning in a professional setting. This opportunity allowed me
+              to strengthen my technical skills, gain practical insights into
+              real-world problem-solving, and understand the dynamics of working
+              in a team environment. Through the internship, I developed a
+              deeper appreciation for the field and honed my adaptability,
+              communication, and collaboration skills. These experiences have
+              reinforced my passion for software engineering and prepared me to
+              contribute effectively to future projects and challenges.
             </motion.p>
           </div>
         </div>
