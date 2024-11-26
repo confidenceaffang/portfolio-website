@@ -10,7 +10,7 @@ const projects = [
   {
     title: "Weather App",
     image: project1,
-  
+    link: "https://weather-app-1274f.web.app/",
     description: [
       "Built a personalized weather app integrating Open Weather API and ChatGPT API that provides accurate clothing recommendations for different weather conditions.",
       "Implemented a Celsius/Fahrenheit toggle feature and successfully deployed on GitHub Pages."
@@ -20,6 +20,7 @@ const projects = [
   {
     title: "Chat Bot",
     image: chatbot,
+    link: "https://github.com/confidenceaffang/chat_bot.git",
     description: [
       "Developed an interactive chatbot using Python and JSON, enabling dynamic responses to user queries by randomly selecting answers from a structured data file.",
       "Implemented data handling and parsing techniques to enhance user interaction, showcasing skills in software development and natural language processing."
@@ -39,6 +40,7 @@ const projects = [
   {
     title: "Banking App",
     image: bank,
+    link: "https://github.com/confidenceaffang/sample-online-banking.git",
     description: [
       "Engineered a full-featured banking platform using TypeScript, React, and Next.js, implementing secure user authentication, real-time transaction processing, and responsive design to ensure seamless cross-device functionality.",
 "Spearheaded the development of 17 custom React components and 3 API integrations, while ensuring WCAG 2.1 AA accessibility compliance, improving the banking experience for users with disabilities."
@@ -48,6 +50,7 @@ const projects = [
   {
     title: "Face Identification",
     image: faceid,
+    link: "https://github.com/confidenceaffang/faceidentification.git",
     description: [
       "Engineered a face identification system using the Viola-Jones algorithm, achieving 70% accuracy in facial recognition and securely storing over 200 facial embeddings in a PostgreSQL database on Aiven.",
       "Developed a user-friendly interface for the face recognition system, integrating real-time camera feed processing and achieving a response time of under 10 seconds for facial matching queries."
@@ -76,12 +79,13 @@ const Project = () => {
               initial={{ opacity: 0, x: -100 }}
               transition={{ duration: 1 }}
               className="w-full lg:w-1/4 flex-shrink-0 mb-4 lg:mb-0 lg:mr-8"
-            >
+            ><a href={project.link} target="_blank" rel="noopener noreferrer">
               <img
                 src={project.image}
                 alt={project.title}
-                className="rounded w-full h-auto"
+                className="rounded w-full h-auto hover:opacity-70"
               />
+              </a>
             </motion.div>
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}

@@ -1,4 +1,4 @@
-import images from "../assets/program.jpeg";
+import images from "../assets/pcsetup.jpg";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -19,7 +19,8 @@ const About = () => {
             <img
               className="rounded-2xl"
               src={images}
-              alt="Person programming"
+              alt="Pc Setup"
+              width={270}
             />
           </div>
         </motion.div>
