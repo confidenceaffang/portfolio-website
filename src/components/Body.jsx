@@ -37,7 +37,6 @@ const Body = () => {
               animate="visible"
               className="my-3 max-w-xl py-6 font-light tracking-tighter"
             >
-<<<<<<< HEAD
               I am currently a student at Wayne State College, pursuing my
               academic journey with a strong passion for technology and
               problem-solving. My aspiration is to become a skilled software
@@ -45,15 +44,6 @@ const Body = () => {
               contributing to the ever-evolving tech industry. I am committed to
               learning, growing, and honing my skills to make a meaningful
               impact in the field.
-=======
-              I am a passionate full stack developer with a knack for crafting
-              robust and scalable web applications. With few years of hands-on
-              experience, I have honed my skills in front-end technologies like
-              React and Next.js, as well as back-end technologies like Node.js,
-              MySQL, PostgreSQL, and MongoDB. My goal is to leverage my
-              expertise to create innovative solutions that drive business
-              growth and deliver exceptional user experiences
->>>>>>> 95f684c970f890ec014ccca843ac797bec6df7da
             </motion.p>
           </div>
         </div>
