@@ -46,7 +46,18 @@ const experiences = [
 
       ],
       technologies: ["Javascript", "Svelte","Node.js","HTML", "CSS","Git", "GitHub"]
-    }
+    },
+     {
+      year: "December 2024 - Present",
+      role: "Software Engineer Intern",
+      company: " Reality AI Lab",
+      description: [
+        "Implemented new features to streamline question-answering functionality, improving response accuracy and reducing latency by 30%.\n",
+        "Developed and enhanced software modules for Marvel AI, an AI-powered teaching assistant, optimizing its user interaction capabilities through efficient algorithms and scalable codebases."
+        
+      ],
+      technologies: ["Javascript", "React.js","Node.js", "SQL","Docker","Firebase" ]
+    },
 
 
   ];
