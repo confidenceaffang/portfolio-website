@@ -16,7 +16,7 @@ const Form = () => {
     e.target.reset();
   };
   return (
-    <div className="border-b pb-10 items-center border-neutral-900">
+    <div className="flex border-b pb-10 items-center border-neutral-900">
       <div className="flex border-b border-neutral-900 pb-20">
         <motion.h1
           whileInView={{ opacity: 1, y: 0 }}
