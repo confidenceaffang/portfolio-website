@@ -13,17 +13,7 @@ const experiences = [
       ],
       technologies: ["Javascript", "React.js","Node.js", "SQL","HTML", "CSS" ]
     },
-    {
-      year : "August 2024 - Present",
-      role : "Computer Science Tutor",
-      company : " Wayne State College",
-      description : [
-        "Tutored 25 Wayne State students in Python and Swift as part of offering a course at the Math & Science Center.\n",
-        "Guided students in understanding complex programming and electronic principles.\n",
-        "Enabled the successful completion of advanced projects, through a collaborative and dynamic learning environment.\n"
-      ], 
-      technologies : ["Python", "Swift"]
-    },
+   
     {
       year : "May 2024 - August 2024",
       role : "Full Stack Developer",
