@@ -1,5 +1,4 @@
 import React from 'react'
-import THREE from 'three.js'
 
 const MainDisplay = () => {
   return (
