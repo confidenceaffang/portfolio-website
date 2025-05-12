@@ -1,100 +1,72 @@
-import React, { useRef, useState, useEffect } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { ShaderMaterial } from 'three'
+import React, { Suspense, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useGLTF, OrbitControls, Html } from "@react-three/drei";
+import bmwModel from "../../assets/3d_models/bmw_g82_m4_with_adro_kit_2022__www.vecarz.com.glb";
+import { Typewriter } from "react-simple-typewriter";
 
+function BMWModel() {
+  const gltf = useGLTF(bmwModel);
+  const modelRef = useRef();
 
-const vertexShader = `
-  uniform float uTime;
-  void main() {
-    vec3 pos = position;
-    pos.x += sin(pos.y * 5.0 + uTime) * 0.1;
-    pos.y += cos(pos.x * 5.0 + uTime) * 0.1;
-     pos.z += cos(pos.z * 5.0 + uTime) * 0.1;
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-  }
-`;
-
-const fragmentShader = `
-  void main() {
-    gl_FragColor = vec4(0.6, 1.0, 1.0, 0.8);
-  }
-`;
-
-const DistortionMaterial = new ShaderMaterial({
-  vertexShader,
-  fragmentShader,
-  uniforms: {
-    uTime: { value: 0 }
-  }
-});
-
-function Scene() {
-  const meshRef = useRef();
-  useFrame(({ clock }) => {
-    DistortionMaterial.uniforms.uTime.value = clock.getElapsedTime();
-    meshRef.current.material = DistortionMaterial;
-  });
   return (
-    <mesh ref={meshRef} >
-      <cylinderGeometry args={[1,1,2]}/>
-      <meshBasicMaterial  wireframe={true} />
-    </mesh>
+    <primitive
+      ref={modelRef}
+      object={gltf.scene}
+      scale={110}
+      position={[0, 0, 0]}
+    />
   );
 }
 
+function AnimatedLight() {
+  const lightRef = useRef();
+  const intensityRef = useRef(0);
+  const targetIntensity = 1.5;
+  const fadeInDuration = 20;
 
-export function SphereBackground({ className }) {
-  return (
-    <Canvas className={className}>
-      <ambientLight intensity={0.1} />
-      <Scene />
-    </Canvas>
-  )
-}
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime();
+    const radius = 10;
 
-export function Timer({ duration, onTimeout }) {
-  const [timeLeft, setTimeLeft] = useState(duration);
-
-  useEffect(() => {
-    if (timeLeft <= 0) {
-      onTimeout();
-      return;
+    if (time <= fadeInDuration) {
+      intensityRef.current = (time / fadeInDuration) * targetIntensity;
+      lightRef.current.intensity = intensityRef.current;
     }
 
-    const intervalId = setInterval(() => {
-      setTimeLeft(timeLeft - 1);
-    }, 1000);
+    lightRef.current.position.x = Math.sin(time * 0.5) * radius;
+    lightRef.current.position.z = Math.cos(time * 0.5) * radius;
+  });
 
-    return () => clearInterval(intervalId);
-  }, [timeLeft, onTimeout]);
-
-
+  return (
+    <directionalLight
+      ref={lightRef}
+      position={[0, 10, 0]}
+      color="white"
+      intensity={0}
+      castShadow
+    />
+  );
 }
 
 const MainDisplay = () => {
-  const [showPage, setShowPage] = useState(true);
-  const handleTimeout = () =>{
-    setShowPage(false)
-    }
   return (
-    <>
-    {showPage ? (
-    <div className="relative h-screen w-screen overflow-hidden bg-black">
-      <SphereBackground className="absolute inset-0 z-0" />
-      <Timer duration={10} onTimeout={handleTimeout} />
-      <div className="flex justify-center items-center text-white text-6xl font-bold tracking-widest h-full w-full absolute z-10">
-        Welcome
+    <div className="w-full h-screen bg-black overflow-hidden relative">
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
+        <h1 className="text-5xl font-bold text-white mb-4 text-center tracking-wider">
+          <Typewriter words={["Welcome to my portfolio"]} typeSpeed={100} />
+        </h1>
       </div>
-    </div>
-    ) : (
-      <div className="relative h-screen w-screen overflow-hidden bg-black">
-      <div className="flex justify-center items-center text-white text-6xl font-bold tracking-widest h-full w-full absolute z-10">
-        Welcome
-      </div>
-    </div>
-    )}
-    </>
-  )
-}
 
-export default MainDisplay
+      <Canvas camera={{ position: [0, 1, 5], fov: 50 }}>
+        <Suspense>
+          <BMWModel />
+          <ambientLight intensity={0.4} />
+          <AnimatedLight />
+          <OrbitControls enablePan={false} minDistance={2} maxDistance={10} />
+        </Suspense>
+      </Canvas>
+    </div>
+  );
+};
+
+export default MainDisplay;
