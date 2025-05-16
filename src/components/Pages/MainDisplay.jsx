@@ -1,6 +1,6 @@
 import React, { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF, OrbitControls, Html } from "@react-three/drei";
+import { useGLTF, OrbitControls } from "@react-three/drei";
 import bmwModel from "../../assets/3d_models/bmw_g82_m4_with_adro_kit_2022__www.vecarz.com.glb";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -62,7 +62,7 @@ const MainDisplay = () => {
           <BMWModel />
           <ambientLight intensity={0.4} />
           <AnimatedLight />
-          <OrbitControls enablePan={false} minDistance={2} maxDistance={10} />
+          <OrbitControls enablePan={false} enableZoom={false} />
         </Suspense>
       </Canvas>
     </div>

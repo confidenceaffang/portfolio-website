@@ -10,6 +10,7 @@ import adasmbridge from "../../assets/adamsbridge.hdr";
 import { useState } from "react";
 import { MdViewSidebar } from "react-icons/md";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const rfs = THREE.MathUtils.randFloatSpread;
 const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
@@ -180,9 +181,11 @@ const Home = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="block py-2 hover:text-blue-500">
-                  Projects
-                </a>
+                <Link to="/projects">
+                  <button className="block py-2 hover:text-blue-500">
+                    Projects
+                  </button>
+                </Link>
               </li>
               <li>
                 <a href="#" className="block py-2 hover:text-blue-500">
@@ -190,9 +193,11 @@ const Home = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="block py-2 hover:text-blue-500">
-                  Connect with me
-                </a>
+                <Link to="/connect_with_me">
+                  <button className="block py-2 hover:text-blue-500">
+                    Connect with me
+                  </button>
+                </Link>
               </li>
             </ul>
           </div>
