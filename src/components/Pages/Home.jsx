@@ -3,14 +3,12 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Outlines, Environment, useTexture } from "@react-three/drei";
 import { Physics, useSphere } from "@react-three/cannon";
 import { EffectComposer, N8AO, SMAA, Bloom } from "@react-three/postprocessing";
-import { useControls } from "leva";
 import { Suspense } from "react";
 import cross from "../../assets/cross.jpg";
 import adasmbridge from "../../assets/adamsbridge.hdr";
 import { useState } from "react";
-import { MdViewSidebar } from "react-icons/md";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const rfs = THREE.MathUtils.randFloatSpread;
 const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
@@ -117,6 +115,41 @@ const Home = () => {
       />
     </motion.svg>
   );
+  const borderVariants = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: {
+      pathLength: 1,
+      opacity: 1,
+      transition: {
+        duration: 2.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const nameVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 1.5,
+        duration: 1.5,
+      },
+    },
+  };
+
+  const detailsVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 2.5,
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
     <main className="w-full h-screen bg-black overflow-hidden relative">
@@ -157,11 +190,10 @@ const Home = () => {
           </EffectComposer>
         </Suspense>
       </Canvas>
-      <section className="absolute top-0 left-0 w-full h-full flex flex-col text-white z-10 pointer-events-none items-center justify-center">
-        {/* Sidebar Button */}
+      <section className="absolute top-0 left-0 w-full h-full flex flex-col text-white z-20 pointer-events-none items-center justify-center">
         <button
           onClick={toggleSidebar}
-          className="absolute top-4 left-4  text-white p-4 rounded-md z-20 pointer-events-auto"
+          className="absolute top-4 left-4 text-white p-4 rounded-md z-20 pointer-events-auto"
         >
           <div className="relative w-12 h-12">
             <SidebarIcon />
@@ -169,50 +201,143 @@ const Home = () => {
         </button>
 
         <div
-          className={`fixed top-0 left-0 h-full bg-gray-900 opacity-60 text-white z-10 w-full shadow-md transform transition-transform duration-300 ease-in-out ${
+          className={`fixed top-0 left-0 h-full bg-gray-900  text-white z-10 w-full shadow-md transform transition-transform duration-300 ease-in-out ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           } pointer-events-auto flex flex-col items-center justify-center`}
         >
-          <div className="p-4 ">
-            <ul className="space-y-10 text-3xl">
-              <li>
-                <a href="#" className="block py-2 hover:text-blue-500">
-                  About Me
+          <motion.div
+            className={`fixed top-0 left-0 h-full bg-black bg-opacity-95 text-white z-40 w-full transform transition-transform duration-500 ease-in-out ${
+              isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+            } flex flex-col items-center justify-center backdrop-blur-sm`}
+            initial={false}
+          >
+            <nav className="space-y-8 text-center">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-4xl md:text-6xl font-light tracking-tight"
+              >
+                <a
+                  href="/home"
+                  className="block py-4 hover:text-gray-400 transition-colors"
+                >
+                  HOME
                 </a>
-              </li>
-              <li>
-                <Link to="/projects">
-                  <button className="block py-2 hover:text-blue-500">
-                    Projects
-                  </button>
-                </Link>
-              </li>
-              <li>
-                <a href="#" className="block py-2 hover:text-blue-500">
-                  Experiences
-                </a>
-              </li>
-              <li>
-                <Link to="/connect_with_me">
-                  <button className="block py-2 hover:text-blue-500">
-                    Connect with me
-                  </button>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
+              </motion.div>
 
-        <div className="text-center">
-          <div className="text-6xl font-bold mb-4">
-            Confidence Mawuli Affang
-          </div>
-          <div className="text-xl">
-            I'm a Software Developer and currently a student at Wayne State
-            College
-          </div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-4xl md:text-6xl font-light tracking-tight"
+              >
+                <a
+                  href="/about"
+                  className="block py-4 hover:text-gray-400 transition-colors"
+                >
+                  ABOUT ME
+                </a>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-4xl md:text-6xl font-light tracking-tight"
+              >
+                <a
+                  href="/projects"
+                  className="block py-4 hover:text-gray-400 transition-colors"
+                >
+                  PROJECTS
+                </a>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-4xl md:text-6xl font-light tracking-tight"
+              >
+                <a
+                  href="/experiences"
+                  className="block py-4 hover:text-gray-400 transition-colors"
+                >
+                  EXPERIENCE
+                </a>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-4xl md:text-6xl font-light tracking-tight"
+              >
+                <a
+                  href="/connect_with_me"
+                  className="block py-4 hover:text-gray-400 transition-colors"
+                >
+                  CONNECT
+                </a>
+              </motion.div>
+            </nav>
+          </motion.div>
         </div>
       </section>
+
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
+        <div className="relative pointer-events-none mb-8 flex justify-center items-center">
+          <motion.h1
+            className="text-4xl md:text-7xl font-bold tracking-widest px-10 py-4 pointer-events-none"
+            variants={nameVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            Confidence Mawuli Affang
+          </motion.h1>
+
+          <svg className="absolute pointer-events-none w-full h-full top-0 left-0">
+            <motion.rect
+              x="0"
+              y="0"
+              width="100%"
+              height="100%"
+              rx="10"
+              ry="10"
+              fill="none"
+              stroke="white"
+              strokeWidth="4"
+              variants={borderVariants}
+              initial="hidden"
+              animate="visible"
+            />
+          </svg>
+        </div>
+
+        <motion.div
+          className="flex pointer-events-none flex-col items-center"
+          variants={detailsVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <p className="text-lg md:text-xl text-gray-400 pointer-events-none tracking-wider mb-8">
+            FULL STACK DEVELOPER & MUSICIAN
+          </p>
+
+          <div className="flex space-x-6 pointer-events-auto">
+            <a
+              href="https://github.com/confidenceaffang"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
+            >
+              <FaGithub size={30} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/confidence-affang-22603b2b2/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
+            >
+              <FaLinkedin size={30} />
+            </a>
+            <a
+              href="mailto:confidenceaffang@gmail.com"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
+            >
+              <FaEnvelope size={30} />
+            </a>
+          </div>
+        </motion.div>
+      </div>
     </main>
   );
 };

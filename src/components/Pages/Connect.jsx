@@ -3,29 +3,28 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Connect = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [submissionStatus, setSubmissionStatus] = useState(null);
+  const [result, setResult] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmissionStatus("submitting");
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
 
-    try {
-      // Simulate sending data (replace with your actual API call)
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+    formData.append("access_key", import.meta.env.VITE_WEB3API);
 
-      // For demonstration purposes, we'll just log the data
-      console.log("Form Data:", { name, email, message });
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
 
-      setName("");
-      setEmail("");
-      setMessage("");
-      setSubmissionStatus("success");
-    } catch (error) {
-      console.error("Form submission error:", error);
-      setSubmissionStatus("error");
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
     }
   };
 
@@ -68,44 +67,11 @@ const Connect = () => {
   );
 
   return (
-    <main className="py-10 bg-black text-white h-screen justify-center items-center">
-      <section className="text-center">
-        <div>Forms</div>
-        <form>
-          <div>
-            <div>
-              <label>Name</label>
-            </div>
-            <input type="text" />
-          </div>
-          <div>
-            <div>
-              <label>Email</label>
-            </div>
-            <input type="email" />
-          </div>
-          <div>
-            <div>
-              <label>Phone</label>
-            </div>
-            <input type="tel" />
-          </div>
-          <div>
-            <div>
-              <label>Message</label>
-            </div>
-            <input type="text" />
-          </div>
-        </form>
-        <div>
-            
-        </div>
-      </section>
-
+    <div className="bg-black min-h-screen text-white overflow-x-hidden">
       <section className="absolute top-0 left-0 w-full h-full flex flex-col text-white z-10 pointer-events-none items-center justify-center">
         <button
           onClick={toggleSidebar}
-          className="absolute top-4 left-4  text-white p-4 rounded-md z-20 pointer-events-auto"
+          className="absolute top-4 left-4 text-white p-4 rounded-md z-20 pointer-events-auto"
         >
           <div className="relative w-12 h-12">
             <SidebarIcon />
@@ -113,41 +79,156 @@ const Connect = () => {
         </button>
 
         <div
-          className={`fixed top-0 left-0 h-full bg-gray-900 opacity-60 text-white z-10 w-full shadow-md transform transition-transform duration-300 ease-in-out ${
+          className={`fixed top-0 left-0 h-full bg-gray-900  text-white z-10 w-full shadow-md transform transition-transform duration-300 ease-in-out ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           } pointer-events-auto flex flex-col items-center justify-center`}
         >
-          <div className="p-4 ">
-            <ul className="space-y-10 text-3xl">
-              <li>
-                <a href="#" className="block py-2 hover:text-blue-500">
-                  About Me
+          <motion.div
+            className={`fixed top-0 left-0 h-full bg-black bg-opacity-95 text-white z-40 w-full transform transition-transform duration-500 ease-in-out ${
+              isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+            } flex flex-col items-center justify-center backdrop-blur-sm`}
+            initial={false}
+          >
+            <nav className="space-y-8 text-center">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-4xl md:text-6xl font-light tracking-tight"
+              >
+                <a
+                  href="/home"
+                  className="block py-4 hover:text-gray-400 transition-colors"
+                >
+                  HOME
                 </a>
-              </li>
-              <li>
-                <Link to="/projects">
-                  <button className="block py-2 hover:text-blue-500">
-                    Projects
-                  </button>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-4xl md:text-6xl font-light tracking-tight"
+              >
+                <Link
+                  to="/about"
+                  className="block py-4 hover:text-gray-400 transition-colors"
+                >
+                  ABOUT ME
                 </Link>
-              </li>
-              <li>
-                <a href="#" className="block py-2 hover:text-blue-500">
-                  Experiences
-                </a>
-              </li>
-              <li>
-                <Link to="/connect_with_me">
-                  <button className="block py-2 hover:text-blue-500">
-                    Connect with me
-                  </button>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-4xl md:text-6xl font-light tracking-tight"
+              >
+                <Link
+                  to="/projects"
+                  className="block py-4 hover:text-gray-400 transition-colors"
+                >
+                  PROJECTS
                 </Link>
-              </li>
-            </ul>
-          </div>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-4xl md:text-6xl font-light tracking-tight"
+              >
+                <Link
+                  to="/experiences"
+                  className="block py-4 hover:text-gray-400 transition-colors"
+                >
+                  EXPERIENCE
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-4xl md:text-6xl font-light tracking-tight"
+              >
+                <Link
+                  to="/connect_with_me"
+                  className="block py-4 hover:text-gray-400 transition-colors"
+                >
+                  CONNECT
+                </Link>
+              </motion.div>
+            </nav>
+          </motion.div>
         </div>
       </section>
-    </main>
+
+      <div className="min-h-screen flex items-center justify-center px-12">
+        <div className="max-w-2xl w-full">
+          <motion.h1
+            className="text-6xl md:text-8xl font-light leading-none mb-12 tracking-tight text-center"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            GET IN TOUCH
+          </motion.h1>
+
+          <form onSubmit={handleSubmit} className="space-y-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              <label htmlFor="name" className="text-gray-400 text-lg">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="w-full mt-2 p-4 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-gray-600 transition-colors"
+                required
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              <label htmlFor="email" className="text-gray-400 text-lg">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="w-full mt-2 p-4 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-gray-600 transition-colors"
+                required
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+            >
+              <label htmlFor="message" className="text-gray-400 text-lg">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                className="w-full mt-2 p-4 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-gray-600 transition-colors"
+                required
+              ></textarea>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="text-center"
+            >
+              <button
+                type="submit"
+                className="bg-gray-800 text-white font-light py-4 px-8 rounded-lg hover:bg-gray-700 transition-colors text-lg"
+              >
+                Submit
+              </button>
+            </motion.div>
+          </form>
+          <span>{result}</span>
+        </div>
+      </div>
+    </div>
   );
 };
 
