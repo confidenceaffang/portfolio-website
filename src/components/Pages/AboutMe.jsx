@@ -16,7 +16,7 @@ import { FaGitAlt } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaPython, FaJava, FaLinux } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
 
 function Violin() {
   const gltf = useGLTF(violin);
@@ -48,7 +48,6 @@ const techStacks = [
   { name: "Linux", icon: <FaLinux /> },
 ];
 
-// --- Data for hobbies with valid image URLs ---
 const hobbies = [
   {
     name: "Hiking",
