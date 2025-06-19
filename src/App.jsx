@@ -1,4 +1,3 @@
-import React from "react";
 import Home from "./components/Pages/Home";
 import MainDisplay from "./components/Pages/MainDisplay";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
