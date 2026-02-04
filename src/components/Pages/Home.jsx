@@ -273,7 +273,7 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
+      <div className="absolute pointer-events-none inset-0 flex flex-col items-center justify-center text-center text-white p-4">
         <div className="relative pointer-events-none mb-8 flex justify-center items-center">
           <motion.h1
             className="text-4xl md:text-7xl font-bold tracking-widest px-10 py-4 pointer-events-none"
